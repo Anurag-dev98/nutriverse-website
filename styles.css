@@ -1,0 +1,647 @@
+/* ========= RESET ========= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ========= ROOT ========= */
+:root {
+  --bg: #F6F4EF;
+  --text: #1B1B1B;
+  --muted: #444444;
+  --brand: #136A37;
+}
+
+/* ========= BASE ========= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========= TYPOGRAPHY ========= */
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ========= CONTAINER ========= */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 72px;
+}
+
+/* ========= BUTTON BASE ========= */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 2px solid var(--brand);
+  color: var(--brand);
+}
+
+.btn-outline:hover {
+  background: var(--brand);
+  color: #ffffff;
+}
+
+
+/* ================= HEADER ================= */
+
+.site-header {
+  width: 100%;
+  background: #F6F4EF;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.header-inner {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 30px;
+  display: block;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 48px;
+}
+
+.nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1B1B1B;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.25s ease;
+}
+
+/* Underline hover */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #136A37;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #136A37;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+
+
+
+
+/* hero section  */
+/* ================= HERO VIDEO ================= */
+
+.hero-video {
+  width: 100%;
+  height: calc(100vh - 88px); /* header height subtract */
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* now available at  */
+/* ================= AVAILABILITY IMPACT ================= */
+
+.availability-impact {
+  padding: 90px 0 80px;  /* reduced height */
+  background: #F1ECE4;
+}
+
+/* BIG HEADING */
+.availability-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.availability-head h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 72px;       /* reduced from 96 */
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  color: #136A37;
+}
+
+/* CARD ROW */
+.availability-row {
+  display: flex;
+  gap: 40px;             /* tighter spacing */
+  justify-content: center;
+  padding: 0 72px;
+}
+
+/* STORE CARDS */
+.store-card {
+  width: 320px;          /* slightly smaller */
+  height: 130px;         /* reduced height */
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+.store-card img {
+  height: 70px;          /* bigger */
+  width: auto;
+  object-fit: contain;
+}
+.store-card img[alt="Jiomart"] {
+  height: 125px;  /* Jiomart needs more visual size */
+}
+
+/* Reveal */
+.store-card.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Hover */
+.store-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .availability-head h2 {
+    font-size: 42px;
+  }
+
+  .availability-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .store-card {
+    width: 90%;
+  }
+}
+
+
+
+
+
+
+/* WHY SECTION  */
+.why-nutriverse {
+  padding: 160px 6%;
+  background: #136A37;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.why-sub {
+  font-size: 16px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.why-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 110px;
+  line-height: 0.85;
+  letter-spacing: -3px;
+  margin-bottom: 40px;
+}
+
+.why-desc {
+  font-size: 20px;
+  max-width: 500px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.why-right img {
+  width: 420px;
+  transform: rotate(-6deg);
+}
+
+
+
+
+
+/* review section  */
+.reviews-section {
+  padding: 140px 6%;
+  background: #EDE6DC;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.reviews-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 90px;
+  line-height: 0.9;
+  letter-spacing: -2px;
+  color: #136A37;
+}
+
+.review-count {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+
+.review-card {
+  border-radius: 32px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-12px);
+}
+
+.review-top img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.review-content {
+  padding: 40px 30px;
+}
+
+.stars {
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+.review-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.review-name {
+  font-weight: 600;
+}
+
+/* flavour tint bases */
+.review-card.cream {
+  border-bottom: 8px solid #DDEEDF;
+}
+
+.review-card.spice {
+  border-bottom: 8px solid #F4D6C6;
+}
+
+.review-card.raw {
+  border-bottom: 8px solid #F8E6B9;
+}
+
+
+
+
+/* COOKIES  */
+.cookies-section {
+  padding: 160px 6%;
+  background: #E9E1D6; /* warm tone */
+  position: relative;
+  overflow: hidden;
+}
+
+.cookies-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+}
+
+/* IMAGE SIDE */
+.cookies-left img {
+  width: 420px;
+  transform: rotate(4deg);
+  transition: transform 0.5s ease;
+}
+
+.cookies-left img:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+/* TEXT SIDE */
+.cookies-sub {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.cookies-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  font-size: 110px;
+  line-height: 0.85;
+  letter-spacing: -3px;
+  color: #1B1B1B;
+  margin-bottom: 40px;
+}
+
+.cookies-desc {
+  font-size: 20px;
+  max-width: 520px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+
+
+
+/* FOLLOW US SECTION  */
+.insta-community {
+  position: relative;
+  padding: 120px 6%;
+  background: #F3EDE4;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* giant scrolling text */
+.community-bg-text {
+  position: absolute;
+  white-space: nowrap;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(19,106,55,0.05);
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.community-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.community-inner h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 70px;
+  font-weight: 900;
+  color: #136A37;
+  margin-bottom: 40px;
+}
+
+.community-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* insta icon bubble */
+.insta-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #136A37;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 34px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+.insta-icon:hover {
+  transform: scale(1.1);
+}
+
+/* follow button */
+.community-btn {
+  padding: 16px 36px;
+  border-radius: 999px;
+  background: #136A37;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.community-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+
+
+
+/* ================= FOOTER ================= */
+
+.site-footer {
+  background: #0F4F2F;
+  color: #F3EDE4;
+  padding: 140px 6% 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Layout */
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 120px;
+  margin-bottom: 120px;
+}
+
+/* LEFT SIDE */
+.footer-logo {
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 110px;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  margin-bottom: 40px;
+  color: #F3EDE4;
+}
+
+.footer-tagline {
+  font-size: 18px;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* RIGHT SIDE */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #F3EDE4;
+  font-size: 18px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  transform: translateX(8px);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-legal a {
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.6;
+  color: #F3EDE4;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+}
+
+/* Bottom */
+.footer-bottom {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .footer-heading {
+    font-size: 60px;
+  }
+
+}
+
+
+
+
+
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+
