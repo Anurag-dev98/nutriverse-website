@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Nutriverse</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Nutriverse</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="./about.css">
 </head>
 <body>
 
-<header class="about-hero">
-  <h1>
-    WE DON’T DO<br>
-    BORING HEALTH.
-  </h1>
-  <p>
-    Nutriverse is built for people who want better snacks —
-    without pretending to live on salads.
-  </p>
+<!-- NAV -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="../index.html">
+      <img src="../assets/logo.png" class="logo">
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../pages/products.html" class="nav-link">Products</a>
+      <a href="../pages/about.html" class="nav-link active">About</a>
+    </nav>
+  </div>
 </header>
 
 
+<!-- HERO -->
+<section class="about-hero">
+
+  <div class="hero-watermark">
+    BUILT DIFFERENT • BUILT DIFFERENT •
+  </div>
+
+  <div class="container hero-inner">
+    <h1>
+      WE DON’T DO<br>
+      BORING HEALTH.
+    </h1>
+
+    <p>
+      Nutriverse exists because snacks should taste bold,
+      look bold, and still feel light enough for everyday.
+    </p>
+  </div>
+
+</section>
+
+
+
+<!-- STORY -->
 <section class="about-story">
-  <div class="about-container">
+
+  <div class="grain"></div>
+
+  <div class="container story-grid">
 
     <div class="story-left">
-      <h2>WHY WE STARTED</h2>
+      <h2>WHY WE EXIST</h2>
     </div>
 
     <div class="story-right">
       <p>
-        The snack aisle was either junk pretending to be fun,
+        The snack aisle was either junk dressed as fun,
         or “healthy” pretending to taste good.
       </p>
 
@@ -48,69 +79,97 @@
 </section>
 
 
+
+<!-- DIFFERENCE -->
 <section class="about-difference">
-  <h2>WHAT MAKES US DIFFERENT</h2>
 
-  <div class="difference-grid">
+  <div class="container">
+    <h2 class="section-title">WHAT MAKES US DIFFERENT</h2>
 
-    <div class="difference-card">
-      <h3>TASTE FIRST</h3>
-      <p>Health doesn’t work if it doesn’t taste good.</p>
+    <div class="difference-grid">
+
+      <div class="difference-card">
+        <span>01</span>
+        <h3>TASTE FIRST</h3>
+        <p>If it doesn’t slap, it doesn’t ship.</p>
+      </div>
+
+      <div class="difference-card">
+        <span>02</span>
+        <h3>CLEAN LABEL</h3>
+        <p>No weird ingredient paragraphs.</p>
+      </div>
+
+      <div class="difference-card">
+        <span>03</span>
+        <h3>BUILT FOR INDIA</h3>
+        <p>Global quality. Local flavour logic.</p>
+      </div>
+
     </div>
-
-    <div class="difference-card">
-      <h3>INGREDIENT CLARITY</h3>
-      <p>No nonsense labels. No mystery powders.</p>
-    </div>
-
-    <div class="difference-card">
-      <h3>EVERYDAY FRIENDLY</h3>
-      <p>Built for real snackers. Not influencers.</p>
-    </div>
-
   </div>
 </section>
 
 
+
+<!-- INGREDIENT BLOCK -->
 <section class="about-ingredients">
-  <div class="ingredients-inner">
+
+  <div class="container ingredients-inner">
+
     <div class="ingredients-left">
       <h2>
-        MAKED WITH<br>
         REAL MAKAHANA.<br>
-        PERIOD.
+        REAL MILLETS.<br>
+        ZERO DRAMA.
       </h2>
+
       <p>
-        Sourced responsibly. Light. Crunchy.
-        Naturally protein-rich.
+        Light. Crunchy. Protein-rich.
+        No performance health theatre.
       </p>
     </div>
 
     <div class="ingredients-right">
-      <img src="../assets/mixmasala.png" alt="Makhana Pack">
+      <img src="../assets/mixmasala.webp" alt="">
     </div>
+
   </div>
+
 </section>
 
 
+
+<!-- VISION -->
 <section class="about-vision">
-  <h2>
-    WE’RE NOT JUST BUILDING SNACKS.<br>
-    WE’RE BUILDING A CATEGORY.
-  </h2>
-  <p>
-    India deserves modern healthy brands
-    that look bold, taste bold,
-    and operate globally.
-  </p>
+
+  <div class="container">
+    <h2>
+      WE’RE BUILDING<br>
+      A MODERN<br>
+      INDIAN SNACK BRAND.
+    </h2>
+
+    <p>
+      Not a trend. Not a diet phase.
+      A category shift.
+    </p>
+  </div>
+
 </section>
+
 
 
 <footer class="about-footer">
   <h2>STAY CURIOUS.</h2>
-  <p>© 2026 Nutriverse</p>
+  <p>© 2025 Nutriverse</p>
 </footer>
 
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="about.js"></script>
 </body>
+
+
 </html>
