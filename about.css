@@ -210,3 +210,47 @@ body{
   font-family:'Poppins',sans-serif;
   font-size:70px;
 }
+
+
+@media (max-width: 900px) {
+
+  .hero-inner h1 {
+    font-size: 42px;
+  }
+
+  .hero-inner p {
+    font-size: 16px;
+  }
+
+  .story-grid {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .story-left h2 {
+    font-size: 36px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ingredients-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  .ingredients-left h2 {
+    font-size: 42px;
+  }
+
+  .about-vision h2 {
+    font-size: 42px;
+  }
+
+}

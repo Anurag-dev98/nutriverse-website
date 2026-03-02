@@ -19,6 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(section);
   }
 
+  /* Header Scroll Effect */
+window.addEventListener("scroll", () => {
+  const header = document.querySelector(".site-header");
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
+});
+
+/* Mobile Toggle */
+const toggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector(".nav-mobile");
+
+toggle.addEventListener("click", () => {
+  mobileNav.classList.toggle("active");
+});
+
+
+
   /* ===== GSAP ===== */
   if (window.gsap) {
 
