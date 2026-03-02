@@ -2,122 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Nutriverse — Redefining</title>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    :root {
+      --brand: #136A37;
+      --bg: #F6F4EF;
+      --text: #1B1B1B;
+      --max-width: 860px;
+    }
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
     body {
+      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #F6F4EF;
-      color: #1B1B1B;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      overflow: hidden;
+      padding:
+        calc(40px + env(safe-area-inset-top))
+        20px
+        calc(40px + env(safe-area-inset-bottom));
+      position: relative;
     }
 
-    .wrapper {
-      max-width: 800px;
-      padding: 40px 20px;
+    /* subtle texture */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("https://grainy-gradients.vercel.app/noise.svg");
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      text-align: center;
+      position: relative;
+      z-index: 2;
     }
 
     .logo {
-      height: 36px;
-      margin-bottom: 60px;
-    }
-
-    h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 64px;
-      font-weight: 800;
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-
-    p {
-      font-size: 20px;
-      opacity: 0.8;
+      height: 32px;
       margin-bottom: 40px;
     }
 
-    .email {
+    h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(34px, 6vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin: 0 0 24px;
+    }
+
+    .highlight {
+      color: var(--brand);
+    }
+
+    .tagline {
+      font-size: clamp(16px, 2.5vw, 20px);
+      margin-bottom: 44px;
+      opacity: 0.9;
+    }
+
+    .cta {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
       font-weight: 600;
-      color: #136A37;
+      font-size: 14px;
       text-decoration: none;
-      font-size: 18px;
-      border-bottom: 2px solid #136A37;
-      padding-bottom: 4px;
-      transition: 0.3s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      max-width: 100%;
+      word-break: break-word;
     }
 
-    .email:hover {
-      opacity: 0.7;
+    .cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
     }
 
-    /* subtle animated background */
     .bg-text {
-      position: absolute;
-      font-size: 120px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 800;
-      color: rgba(19,106,55,0.04);
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: clamp(48px, 12vw, 140px);
+      color: rgba(19,106,55,0.05);
       white-space: nowrap;
-      animation: scroll 20s linear infinite;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
     }
 
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* mobile */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 36px;
+    @media (max-width: 480px) {
+      .logo {
+        height: 26px;
+        margin-bottom: 28px;
       }
 
-      p {
-        font-size: 16px;
+      .tagline {
+        margin-bottom: 36px;
       }
 
-      .bg-text {
-        font-size: 48px;
+      .cta {
+        padding: 12px 22px;
+        font-size: 13px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="bg-text">
-    REDEFINING • REBUILDING • REIMAGINING •
-  </div>
-
-  <div class="wrapper">
-    <img src="assets/logo.png" alt="Nutriverse" class="logo">
+  <div class="container">
+    <img src="/assets/logo.png" alt="Nutriverse" class="logo">
 
     <h1>
-      We’re Redefining Nutriverse.
+      Building something as good as our
+      <span class="highlight">makhana</span>.
     </h1>
 
-    <p>
-      The crunch is evolving.  
-      A sharper, bolder experience is on its way.
+    <p class="tagline">
+      Wish us luck.
     </p>
 
-    <a href="mailto:contact@thenutriverse.in" class="email">
+    <a href="mailto:contact@thenutriverse.in" class="cta">
       contact@thenutriverse.in
     </a>
+  </div>
+
+  <div class="bg-text">
+    NUTRIVERSE • NUTRIVERSE • NUTRIVERSE •
   </div>
 
 </body>
