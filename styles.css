@@ -1089,25 +1089,157 @@ p {
 
 /* ================= MOBILE SYSTEM ================= */
 
+/* ================= REAL MOBILE FIX (FINAL LAYER) ================= */
+
 @media (max-width: 900px) {
 
-  /* Global Section Padding */
-  section {
-    padding: 100px 6%;
+  /* Prevent horizontal scroll (big issue in your layout) */
+  body {
+    overflow-x: hidden;
   }
 
-  /* Container */
-  .container {
-    padding: 0 20px;
+  /* HEADER */
+  .header-inner {
+    height: 70px;
+    padding: 0 16px;
   }
 
-  /* Headings Scale */
-  h1 { font-size: 42px !important; }
-  h2 { font-size: 36px !important; }
-  h3 { font-size: 20px !important; }
+  .logo {
+    height: 24px;
+  }
 
-  p {
-    font-size: 16px !important;
+  /* HERO */
+  .hero-video {
+    height: 65vh;
+  }
+
+  /* WHY SECTION */
+  .why-nutriverse {
+    padding: 80px 20px;
+  }
+
+  .why-title {
+    font-size: 56px !important;
+  }
+
+  .line-italic {
+    font-size: 40px !important;
+  }
+
+  .why-desc {
+    font-size: 15px;
+  }
+
+  .badges {
+    gap: 8px;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+
+  /* COOKIES */
+  .cookies-section {
+    padding: 100px 20px;
+  }
+
+  .cookies-inner {
+    flex-direction: column;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .cookies-left img {
+    width: 260px;
+    transform: none;
+  }
+
+  .cookies-title {
+    font-size: 48px !important;
+    letter-spacing: -1px;
+  }
+
+  .cookies-desc {
+    font-size: 16px;
+  }
+
+  /* AVAILABILITY */
+  .availability-impact {
+    padding: 100px 20px;
+  }
+
+  .availability-head h2 {
+    font-size: 36px !important;
+  }
+
+  .store-card {
+    height: 110px;
+  }
+
+  .store-card img {
+    height: 50px;
+  }
+
+  /* INSTAGRAM */
+  .insta-community {
+    padding: 100px 20px;
+  }
+
+  .community-inner h2 {
+    font-size: 32px !important;
+  }
+
+  .insta-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .community-btn {
+    font-size: 14px;
+    padding: 14px 24px;
+  }
+
+  /* CONTACT */
+  .contact-hero {
+    padding: 80px 20px;
+  }
+
+  .contact-inner {
+    padding: 40px 20px;
+    border-radius: 24px;
+  }
+
+  .contact-title {
+    font-size: 34px !important;
+  }
+
+  .contact-sub {
+    font-size: 15px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    transform: none;
+  }
+
+  .contact-card img {
+    width: 200px;
+  }
+
+  /* FOOTER */
+  .site-footer {
+    padding: 100px 20px 40px;
+  }
+
+  .footer-heading {
+    font-size: 36px !important;
+    letter-spacing: -1px;
+  }
+
+  .footer-logo {
+    height: 40px;
   }
 
 }
