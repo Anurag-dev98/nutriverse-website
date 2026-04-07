@@ -3,173 +3,1396 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Nutriverse</title>
+<title>Nutriverse – Our Story</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Special+Elite&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="./about.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green:#1a6b2f;
+  --deep:#0d3d1a;
+  --darkest:#081a0c;
+  --cream:#f2ebe0;
+  --warm:#faf7f1;
+  --paper:#f5f0e6;
+  --mustard:#e8a920;
+  --orange:#e8620a;
+  --rust:#c0391b;
+  --text:#1a1208;
+  --muted:#8a7a65;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+
+/* ─── GRAIN OVERLAY ─── */
+body::after{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:999;opacity:.4;
+}
+
+/* ─────────────────────────────────────
+   SECTION 1 — HERO
+   Full bleed. Editorial magazine energy.
+───────────────────────────────────── */
+.hero{
+  min-height:60vh;
+  background:var(--green);
+  display:grid;
+  grid-template-rows:1fr auto;
+  position:relative;
+  overflow:hidden;
+  padding:80px 72px 60px;
+}
+
+/* diagonal split */
+.hero::before{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:180px;
+  background:var(--warm);
+  clip-path:polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* big background type */
+.hero-bg{
+  position:absolute;
+  bottom:100px;right:-40px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:320px;
+  color:rgba(255,255,255,0.04);
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+  letter-spacing:0.02em;
+}
+
+.hero-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+}
+
+.hero-issue{
+  font-size:10px;
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+  line-height:2;
+}
+.hero-issue span{color:var(--mustard);}
+
+.hero-tag{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid rgba(255,255,255,0.15);
+  padding:8px 20px;
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.hero-tag-dot{width:6px;height:6px;background:var(--mustard);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+
+.hero-center{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+  text-align:center;
+  padding:60px 0 100px;
+  position:relative;
+  z-index:2;
+}
+
+.hero-overline{
+  font-size:11px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  font-weight:400;
+  margin-bottom:32px;
+}
+
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(52px,9vw,140px);
+  font-weight:900;
+  line-height:0.92;
+  color:white;
+  letter-spacing:-0.02em;
+}
+.hero-h1 .italic{font-style:italic;color:rgba(255,255,255,0.45);}
+.hero-h1 .block{display:block;}
+
+.hero-sub{
+  font-size:18px;
+  font-weight:300;
+  color:rgba(255,255,255,0.5);
+  margin-top:28px;
+  max-width:500px;
+  line-height:1.7;
+  font-style:italic;
+  font-family:'Playfair Display',serif;
+}
+.hero-sub strong{color:rgba(255,255,255,0.85);font-style:normal;font-weight:400;}
+
+.hero-scroll{
+  margin-top:48px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  color:rgba(255,255,255,0.25);
+  font-size:10px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+}
+.scroll-line{
+  width:1px;height:48px;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);
+  animation:scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse{0%,100%{transform:scaleY(1);opacity:.5;}50%{transform:scaleY(0.5);opacity:1;}}
+
+
+/* ─────────────────────────────────────
+   SECTION 2 — THE HONEST ORIGIN
+   Big pull-quote layout. One truth.
+───────────────────────────────────── */
+.origin{
+  padding:50px 72px;
+  background:var(--warm);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+  position:relative;
+}
+
+.origin-left{}
+
+.origin-chapter{
+  font-size:9px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--mustard);
+  margin-bottom:20px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.origin-chapter::after{content:'';flex:1;height:1px;background:rgba(232,169,32,0.3);}
+
+.origin-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(20px,4vw,80px);
+  line-height:0.98;
+  color:var(--text);
+  margin-bottom:28px;
+}
+.origin-h2 .green{color:var(--green);}
+
+.origin-body{
+  font-size:17px;
+  line-height:1.9;
+  color:#4a3a28;
+  font-weight:300;
+  max-width:480px;
+}
+.origin-body p{margin-bottom:20px;}
+.origin-body strong{font-weight:600;color:var(--text);}
+.origin-body em{font-style:italic;color:var(--green);}
+
+.origin-right{
+  position:relative;
+}
+
+/* big pull quote card */
+.pull-quote{
+  background:var(--green);
+  padding:52px 48px;
+  position:relative;
+}
+.pull-quote::before{
+  content:'';
+  position:absolute;
+  top:-8px;left:-8px;
+  right:8px;bottom:8px;
+  border:1.5px solid rgba(26,107,47,0.3);
+  pointer-events:none;
+}
+
+.pq-mark{
+  font-family:'Playfair Display',serif;
+  font-size:100px;
+  line-height:0.6;
+  color:rgba(255,255,255,0.1);
+  margin-bottom:12px;
+  display:block;
+}
+.pq-text{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(22px,2.8vw,32px);
+  line-height:1.5;
+  color:white;
+  font-weight:400;
+  margin-bottom:24px;
+}
+.pq-text strong{font-style:normal;font-weight:700;color:var(--mustard);}
+
+.pq-source{
+  font-size:11px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+
+/* floating stat */
+.stat-float{
+  position:absolute;
+  bottom:-24px;
+  right:-24px;
+  background:var(--mustard);
+  padding:20px 28px;
+  text-align:center;
+}
+.stat-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;
+  line-height:1;
+  color:var(--darkest);
+}
+.stat-label{
+  font-size:9px;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:rgba(8,26,12,0.6);
+  font-weight:500;
+}
+
+
+/* ─────────────────────────────────────
+   SECTION 3 — THE PROBLEM
+   Newspaper column layout. Three truths.
+───────────────────────────────────── */
+.problem{
+  background:var(--cream);
+  padding:100px 72px;
+  position:relative;
+  overflow:hidden;
+}
+.problem-bg{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%) rotate(-8deg);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:240px;
+  color:rgba(26,107,47,0.04);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+}
+
+.section-label{
+  font-size:9px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:48px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.section-label::before{content:'';width:32px;height:1px;background:var(--muted);}
+
+.problem-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,7vw,104px);
+  line-height:0.88;
+  color:var(--text);
+  margin-bottom:72px;
+  max-width:700px;
+}
+.problem-h2 .green{color:var(--green);}
+.problem-h2 .italic{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(32px,4vw,60px);
+  display:block;
+  line-height:1.2;
+  margin-top:8px;
+  color:var(--orange);
+}
+
+.truths{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(0,0,0,0.08);
+}
+.truth{
+  background:var(--cream);
+  padding:44px 36px;
+  position:relative;
+}
+.truth-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:80px;
+  line-height:1;
+  color:rgba(26,107,47,0.08);
+  position:absolute;
+  top:16px;right:20px;
+}
+.truth-icon{font-size:28px;margin-bottom:16px;display:block;}
+.truth-title{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:22px;
+  color:var(--text);
+  margin-bottom:14px;
+  font-weight:700;
+}
+.truth-body{
+  font-size:15px;
+  line-height:1.8;
+  color:#5a4a38;
+  font-weight:300;
+}
+.truth-body strong{font-weight:600;color:var(--text);}
+
+
+/* ─────────────────────────────────────
+   SECTION 4 — THE TIMELINE
+   Typewriter / newspaper archive look.
+───────────────────────────────────── */
+.timeline{
+  background:var(--darkest);
+  padding:100px 72px;
+  position:relative;
+  overflow:hidden;
+}
+
+.timeline-header{
+  margin-bottom:80px;
+}
+.timeline-label{
+  font-size:9px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.2);
+  margin-bottom:16px;
+}
+.timeline-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,6.5vw,100px);
+  line-height:0.88;
+  color:white;
+}
+.timeline-h2 .mustard{color:var(--mustard);}
+
+/* the actual timeline */
+.tl-track{
+  position:relative;
+  padding-left:60px;
+}
+/* vertical line */
+.tl-track::before{
+  content:'';
+  position:absolute;
+  left:18px;top:0;bottom:0;
+  width:1px;
+  background:linear-gradient(to bottom,var(--mustard),rgba(232,169,32,0.1));
+}
+
+.tl-item{
+  position:relative;
+  margin-bottom:60px;
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:40px;
+  align-items:flex-start;
+}
+.tl-item:last-child{margin-bottom:0;}
+
+/* dot on line */
+.tl-item::before{
+  content:'';
+  position:absolute;
+  left:-42px;top:6px;
+  width:10px;height:10px;
+  background:var(--mustard);
+  border-radius:50%;
+  border:2px solid var(--darkest);
+  box-shadow:0 0 0 3px rgba(232,169,32,0.2);
+}
+
+.tl-year{
+  font-family:'Special Elite',monospace;
+  font-size:28px;
+  color:var(--mustard);
+  line-height:1;
+  padding-top:2px;
+}
+
+.tl-content{}
+.tl-title{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:22px;
+  color:white;
+  margin-bottom:10px;
+  font-weight:700;
+}
+.tl-body{
+  font-size:15px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.45);
+  font-weight:300;
+  max-width:560px;
+}
+.tl-body strong{color:rgba(255,255,255,0.8);font-weight:500;}
+
+
+/* ─────────────────────────────────────
+   SECTION 5 — THE BELIEFS
+   Each belief is a full-width statement.
+───────────────────────────────────── */
+.beliefs{
+  background:var(--warm);
+  padding:100px 72px;
+}
+.beliefs-header{margin-bottom:80px;}
+.beliefs-label{
+  font-size:9px;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.beliefs-label::before{content:'';width:32px;height:1px;background:var(--muted);}
+
+.beliefs-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,6.5vw,96px);
+  line-height:0.88;
+  color:var(--text);
+}
+.beliefs-h2 .green{color:var(--green);}
+
+.belief-list{display:flex;flex-direction:column;gap:0;}
+
+.belief{
+  display:grid;
+  grid-template-columns:80px 1fr auto;
+  align-items:center;
+  gap:40px;
+  padding:36px 0;
+  border-top:1px solid rgba(0,0,0,0.08);
+  position:relative;
+  transition:padding-left 0.4s cubic-bezier(0.22,1,0.36,1);
+  cursor:default;
+}
+.belief:last-child{border-bottom:1px solid rgba(0,0,0,0.08);}
+.belief:hover{padding-left:16px;}
+.belief:hover .belief-num{color:var(--green);}
+
+.belief-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:42px;
+  color:rgba(0,0,0,0.08);
+  line-height:1;
+  transition:color 0.3s;
+}
+.belief-center{}
+.belief-title{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:clamp(20px,2.2vw,28px);
+  color:var(--text);
+  margin-bottom:6px;
+  font-weight:700;
+}
+.belief-body{
+  font-size:14.5px;
+  color:var(--muted);
+  font-weight:300;
+  line-height:1.7;
+  max-width:600px;
+}
+.belief-body strong{color:var(--text);font-weight:500;}
+
+.belief-icon{font-size:32px;flex-shrink:0;}
+
+
+/* ─────────────────────────────────────
+   SECTION 6 — THE NUMBERS
+   Big, confident, no explanation needed.
+───────────────────────────────────── */
+.numbers{
+  background:var(--green);
+  padding:100px 72px;
+  position:relative;
+  overflow:hidden;
+}
+.numbers::before{
+  content:'';
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,transparent,transparent 60px,
+    rgba(255,255,255,0.015) 60px,
+    rgba(255,255,255,0.015) 61px
+  );
+}
+
+.numbers-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,6vw,88px);
+  color:white;
+  line-height:0.88;
+  margin-bottom:72px;
+  position:relative;
+  z-index:2;
+}
+.numbers-h2 .mustard{color:var(--mustard);}
+.numbers-h2 .italic{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(32px,3.8vw,54px);
+  display:block;
+  color:rgba(255,255,255,0.4);
+  margin-top:8px;
+  line-height:1.2;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1px;
+  background:rgba(255,255,255,0.08);
+  position:relative;
+  z-index:2;
+}
+.stat-box{
+  background:var(--green);
+  padding:48px 36px;
+  position:relative;
+  transition:background 0.3s;
+}
+.stat-box:hover{background:#1d7534;}
+
+.stat-big{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(56px,5vw,80px);
+  line-height:1;
+  color:white;
+  margin-bottom:8px;
+}
+.stat-big span{color:var(--mustard);}
+
+.stat-desc{
+  font-size:13px;
+  font-weight:300;
+  color:rgba(255,255,255,0.5);
+  line-height:1.6;
+  max-width:180px;
+}
+.stat-desc strong{color:rgba(255,255,255,0.8);font-weight:500;}
+
+/* ─────────────────────────────────────
+   SECTION 7 — CLOSING LETTER
+   From the founders. Handwritten energy.
+───────────────────────────────────── */
+.letter{
+  background:var(--paper);
+  padding:120px 72px;
+  position:relative;
+  overflow:hidden;
+}
+
+/* notebook lines */
+.letter::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(
+    transparent,transparent 39px,
+    rgba(0,0,0,0.04) 39px,
+    rgba(0,0,0,0.04) 40px
+  );
+  pointer-events:none;
+}
+
+/* red margin line */
+.letter::after{
+  content:'';
+  position:absolute;
+  left:140px;top:0;bottom:0;
+  width:1px;
+  background:rgba(192,57,27,0.15);
+  pointer-events:none;
+}
+
+.letter-inner{
+  max-width:760px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+.letter-date{
+  font-family:'Special Elite',monospace;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:32px;
+}
+
+.letter-salutation{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:28px;
+  color:var(--text);
+  margin-bottom:28px;
+  font-weight:400;
+}
+
+.letter-body{
+  font-family:'Special Elite',monospace;
+  font-size:16px;
+  line-height:2.5;
+  color:#3a2e22;
+  margin-bottom:40px;
+}
+.letter-body p{margin-bottom:0;}
+
+/* scratch-out effect */
+.scratch{
+  text-decoration:line-through;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.letter-sign{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-size:36px;
+  color:var(--green);
+  margin-top:16px;
+  display:block;
+  font-weight:700;
+}
+.letter-name{
+  font-size:11px;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-top:6px;
+}
+
+/* Post-it note */
+.postit{
+  position:absolute;
+  top:60px;right:72px;
+  background:#fef08a;
+  padding:20px 24px;
+  width:180px;
+  transform:rotate(3deg);
+  box-shadow:3px 4px 12px rgba(0,0,0,0.12);
+  font-family:'Special Elite',monospace;
+  font-size:13px;
+  color:#1a1208;
+  line-height:1.6;
+  z-index:3;
+}
+.postit::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:rgba(0,0,0,0.06);
+}
+
+
+/* ─── FOOTER CTA STRIP ─── */
+.cta-strip{
+  background:var(--darkest);
+  padding:80px 72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  position:relative;
+  overflow:hidden;
+}
+.cta-strip::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--green),var(--mustard),var(--orange));
+}
+.cta-left{}
+.cta-h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(44px,5vw,76px);
+  line-height:0.9;
+  color:white;
+}
+.cta-h2 .mustard{color:var(--mustard);}
+.cta-sub{
+  font-size:15px;
+  color:rgba(255,255,255,0.4);
+  font-weight:300;
+  margin-top:12px;
+  font-style:italic;
+  font-family:'Playfair Display',serif;
+}
+.cta-btn{
+  background:var(--mustard);
+  color:var(--darkest);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  padding:18px 48px;
+  text-decoration:none;
+  flex-shrink:0;
+  transition:transform 0.2s,background 0.2s;
+  display:inline-block;
+}
+.cta-btn:hover{background:white;transform:translateY(-2px);}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .hero{padding:60px 28px 80px;}
+  .origin,.problem,.timeline,.beliefs,.numbers,.letter,.cta-strip{padding:70px 28px;}
+  .origin{grid-template-columns:1fr;}
+  .truths{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .tl-item{grid-template-columns:80px 1fr;gap:20px;}
+  .belief{grid-template-columns:50px 1fr;gap:16px;}
+  .belief-icon{display:none;}
+  .cta-strip{flex-direction:column;text-align:center;}
+  .postit{display:none;}
+  .letter::after{left:28px;}
+}
+
+
+
+/* HEADER */
+/* ================= HEADER ================= */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 72px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 28px;
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 48px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--mustard);
+}
+
+/* Mobile */
+.menu-toggle {
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+
+  .container {
+    padding: 0 28px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+}
+</style>
+
 </head>
-<body>
 
-<!-- NAV -->
-<header class="site-header">
+
+
+<body>
+  <header class="site-header">
   <div class="container header-inner">
-    <a href="./index.html">
-      <img src="./assets/logo.png" class="logo">
+
+    <a href="/" class="logo-wrap">
+      <img src="/assets/logo.png" alt="Nutriverse" class="logo">
     </a>
 
-    <nav class="nav">
-      <a href="./index.html" class="nav-link">Home</a>
-      <a href="./pages/products.html" class="nav-link">Products</a>
-      <a href="./pages/about.html" class="nav-link active">About</a>
+    <nav class="nav-desktop">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/products.html" class="nav-link">Products</a>
+      <a href="/about.html" class="nav-link active">About</a>
     </nav>
+
+    <button class="menu-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
+
+  <nav class="nav-mobile">
+    <a href="/">Home</a>
+    <a href="/products.html">Products</a>
+    <a href="/about.html">About</a>
+  </nav>
 </header>
 
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
 
-<!-- HERO -->
-<section class="about-hero">
-
-  <div class="hero-watermark">
-    BUILT DIFFERENT • BUILT DIFFERENT •
-  </div>
-
-  <div class="container hero-inner">
-    <h1>
-      WE DON’T DO<br>
-      BORING HEALTH.
+  <div class="hero-center">
+    <p class="hero-overline">Chapter One — The Beginning</p>
+    <h1 class="hero-h1">
+      <span class="block">The</span>
+      <span class="block italic">Snack that</span>
+      <span class="block">gets you.</span>
+      <!-- <span class="block italic">that happens to be healthy.</span> -->
     </h1>
-
-    <p>
-      Nutriverse exists because snacks should taste bold,
-      look bold, and still feel light enough for everyday.
-    </p>
-  </div>
-
-</section>
-
-
-
-<!-- STORY -->
-<section class="about-story">
-
-  <div class="grain"></div>
-
-  <div class="container story-grid">
-
-    <div class="story-left">
-      <h2>WHY WE EXIST</h2>
-    </div>
-
-    <div class="story-right">
-      <p>
-        The snack aisle was either junk dressed as fun,
-        or “healthy” pretending to taste good.
-      </p>
-
-      <p>
-        We built Nutriverse to remove that compromise.
-        Real makhana. Real millets. Real flavour.
-        No fake halo.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- DIFFERENCE -->
-<section class="about-difference">
-
-  <div class="container">
-    <h2 class="section-title">WHAT MAKES US DIFFERENT</h2>
-
-    <div class="difference-grid">
-
-      <div class="difference-card">
-        <span>01</span>
-        <h3>TASTE FIRST</h3>
-        <p>If it doesn’t slap, it doesn’t ship.</p>
-      </div>
-
-      <div class="difference-card">
-        <span>02</span>
-        <h3>CLEAN LABEL</h3>
-        <p>No weird ingredient paragraphs.</p>
-      </div>
-
-      <div class="difference-card">
-        <span>03</span>
-        <h3>BUILT FOR INDIA</h3>
-        <p>Global quality. Local flavour logic.</p>
-      </div>
-
+    <!-- <p class="hero-sub">
+      There's a difference.<br>
+      <strong>A very important one.</strong>
+    </p> -->
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll to find out
     </div>
   </div>
 </section>
 
 
-
-<!-- INGREDIENT BLOCK -->
-<section class="about-ingredients">
-
-  <div class="container ingredients-inner">
-
-    <div class="ingredients-left">
-      <h2>
-        REAL MAKAHANA.<br>
-        REAL MILLETS.<br>
-        ZERO DRAMA.
-      </h2>
-
-      <p>
-        Light. Crunchy. Protein-rich.
-        No performance health theatre.
-      </p>
-    </div>
-
-    <div class="ingredients-right">
-      <img src="./assets/mixmasala.webp" alt="">
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- VISION -->
-<section class="about-vision">
-
-  <div class="container">
-    <h2>
-      WE’RE BUILDING<br>
-      A MODERN<br>
-      INDIAN SNACK BRAND.
+<!-- ══════════════ ORIGIN ══════════════ -->
+<section class="origin">
+  <div class="origin-left">
+    <div class="origin-chapter">Chapter 01 — Why we exist</div>
+    <h2 class="origin-h2">
+      WE BELIEVE THE BEST SNACK
+YOU EAT EVERY DAY<br>
+      <span class="green">SHOULD ALSO BE ONE
+YOU FEEL GOOD ABOUT.</span>
     </h2>
 
-    <p>
-      Not a trend. Not a diet phase.
-      A category shift.
-    </p>
+    <div class="origin-body">
+      <p style="font-weight: 500">
+Not just tasty. <br>
+Not just healthy. <br>
+Not just premium. <br>
+
+A brand that fits into everyday life.
+      </p>
+      <!-- <p>
+        Better ingredients.<br>
+        Better flavours.<br>
+        Better packaging.<br>
+        Better distribution.
+      </p> -->
+    </div>
   </div>
+
+  <div class="origin-right">
+    <div class="pull-quote">
+      <span class="pq-mark">"</span>
+      <p style="color: wheat; ">Nutriverse was built on a simple observation.</p>
+      <p class="pq-text">
+       India has always had great ingredients,
+but modern snacking was stuck between
+fried junk and boring health food. <strong>We wanted something better.
+</strong>
+      </p>
+      <br>
+      <br>
+    </div>
+    <div class="stat-float">
+      <div class="stat-num">Better</div>
+      <div class="stat-label">ingredients & flavours </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TEST -->
+
+<section class="nv-section">
+
+<style>
+
+.nv-section{
+  --green:#1a6b2f;
+  --cream:#faf7f1;
+  --mustard:#e8a920;
+  --orange:#e8620a;
+  --text:#1a1208;
+  --muted:#8a7a65;
+  --paper:#f2ebe0;
+
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  padding:110px 72px 120px;
+  position:relative;
+  overflow:hidden;
+}
+
+
+/* watermark */
+
+.nv-section::before{
+  content:'NUTRIVERSE';
+  position:absolute;
+  bottom:-20px;
+  left:-10px;
+  font-family:'Bebas Neue',sans-serif;
+  font-size:180px;
+  color:rgba(26,107,47,0.04);
+  white-space:nowrap;
+}
+
+
+/* top row */
+
+.nv-section .top-row{
+  display:flex;
+  justify-content:space-between;
+  gap:60px;
+  margin-bottom:80px;
+}
+
+.nv-section .section-label{
+  font-size:10px;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  color:var(--green);
+  margin-bottom:24px;
+  display:flex;
+  gap:10px;
+}
+
+.nv-section .section-label::before{
+  content:'';
+  width:24px;
+  height:1px;
+  background:var(--green);
+}
+
+.nv-section .headline{
+  font-family:'Bebas Neue';
+  font-size:clamp(64px,8vw,130px);
+  line-height:.9;
+}
+
+.nv-section .green{color:var(--green)}
+
+.nv-section .ghost{
+  -webkit-text-stroke:2px var(--text);
+  color:transparent;
+}
+
+
+/* right */
+
+.nv-section .top-right{
+  max-width:400px;
+  border-left:3px solid var(--mustard);
+  padding-left:30px;
+}
+
+.nv-section .opening-copy{
+  font-family:'Playfair Display';
+  font-style:italic;
+  font-size:22px;
+  line-height:1.6;
+}
+
+
+/* grid */
+
+.nv-section .content-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+
+/* cards */
+
+.nv-section .q-card{
+  background:var(--green);
+  border-radius:16px;
+  padding:40px;
+  transition:.35s;
+}
+
+.nv-section .q-card:hover{
+  transform:translateY(-6px);
+}
+
+
+.nv-section .q-word{
+  font-family:'Bebas Neue';
+  font-size:48px;
+  color:white;
+  display:flex;
+  gap:10px;
+  transition:.3s;
+}
+
+.nv-section .dot{
+  width:8px;
+  height:8px;
+  background:var(--mustard);
+  border-radius:50%;
+  opacity:0;
+  transition:.2s;
+}
+
+.nv-section .q-word:hover{
+  padding-left:8px;
+}
+
+.nv-section .q-word:hover .dot{
+  opacity:1;
+}
+
+
+/* access */
+
+.nv-section .access-card{
+  background:var(--mustard);
+  border-radius:16px;
+  padding:36px;
+  transition:.35s;
+}
+
+.nv-section .access-card:hover{
+  transform:translateY(-6px);
+}
+
+.nv-section .access-word{
+  font-family:'Bebas Neue';
+  font-size:42px;
+}
+
+
+/* right */
+
+.nv-section .cat-card{
+  background:var(--paper);
+  border-radius:16px;
+  padding:40px;
+}
+
+
+.nv-section .cat-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(0,0,0,.07);
+  transition:.25s;
+}
+
+.nv-section .cat-name{
+  font-family:'Bebas Neue';
+  font-size:32px;
+  flex:1;
+}
+
+.nv-section .cat-arrow{
+  opacity:0;
+  transform:translateX(-6px);
+  transition:.2s;
+}
+
+.nv-section .cat-item:hover{
+  padding-left:6px;
+}
+
+.nv-section .cat-item:hover .cat-arrow{
+  opacity:1;
+  transform:translateX(0);
+}
+
+
+/* tags */
+
+.nv-section .cat-tag{
+  font-size:10px;
+  padding:4px 10px;
+  border-radius:20px;
+}
+
+.nv-section .live{
+  background:#dff3e5;
+  color:var(--green);
+}
+
+.nv-section .coming{
+  background:#eee;
+  color:gray;
+}
+
+
+/* closing */
+
+.nv-section .closing-card{
+  background:var(--text);
+  border-radius:16px;
+  padding:40px;
+  transition:.35s;
+}
+
+.nv-section .closing-card:hover{
+  transform:translateY(-6px);
+}
+
+.nv-section .closing-text{
+  color:white;
+  font-size:22px;
+  font-style:italic;
+}
+
+
+/* responsive */
+
+@media(max-width:900px){
+
+.nv-section{
+padding:70px 24px;
+}
+
+.nv-section .top-row{
+flex-direction:column;
+}
+
+.nv-section .content-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+
+<div class="section-label">
+</div>
+
+<h2 class="headline">
+
+</h2>
+
+</div>
+
+
+
+<div class="top-right">
+
+<p class="opening-copy">
+
+
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="content-grid">
+
+
+<div>
+
+<div class="q-card">
+
+<div class="q-word">
+<span class="dot"></span>Crunchy.
+</div>
+
+<div class="q-word">
+<span class="dot"></span>Light.
+</div>
+
+<div class="q-word">
+<span class="dot"></span>Flavourful.
+</div>
+
+</div>
+
+
+<div class="access-card">
+
+<div class="access-word">
+Easy to eat.
+</div>
+
+<div class="access-word">
+Easy to find.
+</div>
+
+</div>
+
+</div>
+
+
+
+<div>
+
+<div class="cat-card">
+
+<div class="cat-item">
+🌾 <div class="cat-name">Makhana</div>
+<div class="cat-tag live">Live</div>
+<div class="cat-arrow">→</div>
+</div>
+
+<div class="cat-item">
+🌿 <div class="cat-name">Millet Snacks</div>
+<div class="cat-tag live">Live</div>
+<div class="cat-arrow">→</div>
+</div>
+
+<div class="cat-item">
+🍪 <div class="cat-name">Cookies</div>
+<div class="cat-tag live">Live</div>
+<div class="cat-arrow">→</div>
+</div>
+
+<div class="cat-item">
+👀 <div class="cat-name">New formats</div>
+<div class="cat-tag coming">Coming</div>
+<div class="cat-arrow">→</div>
+</div>
+
+</div>
+
+
+<div class="closing-card">
+
+<div class="closing-text">
+
+Because good snacking  
+should not be limited  
+to <strong>one product.</strong>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
 
 
-<footer class="about-footer">
-  <h2>STAY CURIOUS.</h2>
-  <p>© 2025 Nutriverse</p>
-</footer>
+
+<!-- ══════════════ LETTER ══════════════ -->
+<section class="letter">
+
+  <div class="postit">
+    p.s. — we tasted every flavour at least 47 times before launching. for quality reasons. obviously. 🙃</div>
+
+  <div class="letter-inner">
+    <div class="letter-date">Monday, 2026. Sometime after the third handful.</div>
+
+    <div class="letter-salutation">Dear person reading this,</div>
+
+    <div class="letter-body">
+      <p>We started Nutriverse with a simple goal.</p>
+      <p>Build snacks people can eat every day.</p>
+      <!-- <p>Tired of snacks that tasted like <span class="scratch">sadness</span> compromise.</p> -->
+      <p>Not only when dieting. <br>
+Not only when working out. <br>
+Not only when feeling guilty.
+</p>
+
+<p>
+ We Make snacks that taste good,
+feel light,
+and fit into real life.
+</p>
+      <!-- <p>Because honestly — <strong>someone we love always is.</strong></p> -->
+    </div>
+
+    <span class="letter-sign">Nutriverse</span>
+  </div>
+</section>
 
 
-<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-<script src="about.js"></script>
+<!-- ══════════════ CTA STRIP ══════════════ -->
+<div class="cta-strip">
+  <div class="cta-left">
+    <h2 class="cta-h2">
+      Okay. You've read<br>
+      enough. <span class="mustard">Go eat something.</span>
+    </h2>
+    <p class="cta-sub">The makhana is better than this page. We promise.</p>
+  </div>
+  <a href="#" class="cta-btn">Shop the Snacks →</a>
+</div>
+
 </body>
-
-
 </html>
