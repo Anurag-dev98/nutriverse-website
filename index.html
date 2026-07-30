@@ -73,7 +73,7 @@
 
 <body>
 
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container header-inner">
 
     <a href="/" class="logo-wrap">
@@ -95,15 +95,15 @@
   </div>
 
   <!-- Mobile Menu -->
-  <nav class="nav-mobile">
+  <nav class="nav-mobile" aria-label="Primary Mobile Navigation">
     <a href="/">Home</a>
-    <!-- <a href="./products.html">Products</a> -->
-    <!-- <a href="./about.html">About</a> -->
   </nav>
 </header>
 
 <!-- Hero section  -->
- <section class="hero-video">
+ <main id="main" role="main">
+
+ <section class="hero-video" aria-label="Hero video">
   <video
   class="hero-video-element"
   autoplay
@@ -111,11 +111,12 @@
   loop
   playsinline
   preload="none"
-  poster="assets/hero-poster.jpg"
+  poster=""
 >
-    <source src="https://cdn.shopify.com/videos/c/o/v/9ba4bf6b98ab4e7bb49c9868371073b1.mp4" type="video/mp4">
+    <source media="(min-width: 701px)" src="https://cdn.shopify.com/videos/c/o/v/9ba4bf6b98ab4e7bb49c9868371073b1.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <img class="hero-video-poster" src="assets/product.png" alt="Nutriverse hero poster" aria-hidden="true">
 </section>
 
 <!--Hidden SEO Block -->
@@ -127,7 +128,7 @@
   <p>Nutriverse is co-founded by Anurag Singh and Aditya Singh. The brand is the parent company of Maknova Makhana, offering pocket-sized flavoured makhana snacks.</p>
 </section>
 
-<section class="why-nutriverse">
+<section class="why-nutriverse" aria-labelledby="why-heading">
 
   <div class="why-inner">
 
@@ -136,7 +137,7 @@
 
       <p class="why-sub"></p>
 
-      <h2 class="why-title">
+      <h2 id="why-heading" class="why-title">
         Snack
         <span class="line-italic">that gets you. </span>
         <span class="accent">Light. Crunchy.</span>
@@ -153,7 +154,6 @@ Made to keep going.
 
       <div class="badges">
         <span class="badge"><span class="dot"></span>Roasted, Never Fried</span>
-        <span class="badge"><span class="dot"></span>18% Daily Protein*</span>
         <span class="badge"><span class="dot"></span>0g Trans Fat</span>
         <span class="badge"><span class="dot"></span>Gluten Free</span>
         <span class="badge"><span class="dot"></span>Ancient Superfood</span>
@@ -163,7 +163,7 @@ Made to keep going.
 
     <!-- RIGHT IMAGE (UNCHANGED) -->
     <div class="why-right">
-      <img src="assets/mixmasala.webp" alt="Mix Masala Makhana" loading="lazy" decoding="async">
+      <img src="assets/mixmasala.webp" alt="Mix Masala Makhana" loading="lazy" decoding="async" width="420">
     </div>
 
   </div>
@@ -171,18 +171,18 @@ Made to keep going.
 </section>
 
 <!-- WHY SECTION COOKIES  -->
- <section class="cookies-section">
+ <section class="cookies-section" aria-labelledby="cookies-heading">
 
   <div class="cookies-inner">
 
     <div class="cookies-left">
-      <img src="assets/cookies.jpg" alt="Nutriverse Makhana Millet Cookies" loading="lazy">
+      <img src="assets/cookies.png" alt="Nutriverse Makhana Millet Cookies" width="1600" height="1066" loading="lazy" decoding="async">
     </div>
 
     <div class="cookies-right">
       <p class="cookies-sub">For snack breaks that hit different.</p>
 
-      <h2 class="cookies-title">
+      <h2 id="cookies-heading" class="cookies-title">
         BAKED.<br>
         NOT BORING.
       </h2>
@@ -201,7 +201,7 @@ Made to keep going.
 <!-- Now available at  -->
 <section class="availability-impact">
   <div class="availability-head">
-    <h2>
+    <h2 id="availability-heading">
       Nutriverse,<br>
       Now At Your Doorstep <b style="color: rgb(170, 221, 238);">& Also on</b>
     </h2>
@@ -209,12 +209,17 @@ Made to keep going.
 
   <div class="availability-row">
 
-    <div class="store-card">
-      <img src="assets/amazon.png" alt="Amazon">
+    <div class="store-card" aria-labelledby="availability-heading">
+      <img src="assets/amazon.png" alt="Amazon" width="150">
     </div>
 
-    <div class="store-card">
-      <img src="assets/jiomart.png" alt="Jiomart">
+    <div class="store-card" aria-labelledby="availability-heading">
+      soon
+      <img src="assets/bigbasket.png" alt="Amazon" width="150">
+    </div>
+
+    <div class="store-card" aria-labelledby="availability-heading">
+      <img src="assets/jiomart.png" alt="JioMart" width="150">
     </div>
 
   </div>
@@ -222,44 +227,38 @@ Made to keep going.
 
 <!-- FOLLOW US  -->
 <section class="insta-community">
-
-  <div class="community-bg-text">
-    CRUNCH • CULT • CRUNCH • CULT
-  </div>
-
   <div class="community-inner">
-
-    <h2>JOIN THE CULT.</h2>
-
-    <div class="community-row">
-
-      <div class="insta-icon">
-        <i class="fab fa-instagram"></i>
-      </div>
-
-      <a href="https://instagram.com/thenutriverse.in"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="community-btn">
-         Follow @thenutriverse.in
-      </a>
-
-    </div>
-
+    <p class="community-eyebrow">The crunch club</p>
+    <h2>Come for the crunch.<br><em>Stay for the good stuff.</em></h2>
+    <a href="https://instagram.com/thenutriverse.in"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="community-link"
+      aria-label="Follow Nutriverse on Instagram">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none">
+        <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"></rect>
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"></circle>
+        <circle cx="17.35" cy="6.65" r="1.15" fill="currentColor"></circle>
+      </svg>
+      <span>Follow on Instagram</span>
+      <b aria-hidden="true">↗</b>
+    </a>
   </div>
-
 </section>
 
 
 <!-- CONTACT PAGE : -->
- <section class="contact-hero">
+ </section>
+
+ <!-- CONTACT PAGE : -->
+ <section class="contact-hero" aria-labelledby="contact-heading">
 
   <div class="contact-inner">
 
     <!-- LEFT -->
     <div class="contact-left">
 
-      <h2 class="contact-title">
+      <h2 id="contact-heading" class="contact-title">
         Let’s build<br>
         something bigger.
       </h2>
@@ -291,7 +290,7 @@ Made to keep going.
 
       </div>
 
-      <a href="mailto:contact@thenutriverse.in" class="contact-btn">
+      <a href="mailto:contact@thenutriverse.in" class="contact-btn" aria-label="Email Nutriverse">
         Contact Us
       </a>
 
@@ -302,7 +301,7 @@ Made to keep going.
     <div class="contact-right">
 
       <div class="contact-card">
-        <img src="assets/mixmasala.webp" alt="">
+        <img src="assets/mixmasala.webp" alt="Nutriverse product - Mix Masala" width="280">
       </div>
 
     </div>
@@ -310,6 +309,8 @@ Made to keep going.
   </div>
 
 </section>
+
+</main>
 
 
 
